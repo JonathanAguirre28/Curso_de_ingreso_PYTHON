@@ -40,7 +40,13 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        numero_a_text = self.txt_operador_a.get()
+        numero_a_entero = int(numero_a_text)
+        numero_b_text = self.txt_operador_b.get()
+        numero_b_entero = int(numero_b_text)
+        resto_division = numero_a_entero % numero_b_entero
+        mensaje = "El resto de dividir 7 / 2 es :{2}".format(numero_a_entero,numero_b_entero,resto_division)
+        alert("Resultado", mensaje)
         
         
     
