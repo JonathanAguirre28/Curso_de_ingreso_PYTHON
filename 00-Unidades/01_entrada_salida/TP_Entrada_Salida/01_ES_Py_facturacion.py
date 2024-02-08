@@ -5,8 +5,9 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Jonathan Adrian
+apellido: Aguirre
+tutor: Alejandro
 ---
 TP: ES_Facturaciones
 ---
@@ -52,13 +53,36 @@ class App(customtkinter.CTk):
         self.btn_total_iva.grid(row=5, pady=10, columnspan=2, sticky="nsew")
 
     def btn_total_on_click(self):
-        pass
-
+        importe1_a_text = self.txt_importe_1.get()
+        importe2_a_text = self.txt_importe_2.get()
+        importe3_a_text = self.txt_importe_3.get()
+        importe1_a_numero = int(importe1_a_text)
+        importe2_a_numero = int(importe2_a_text)
+        importe3_a_numero = int(importe3_a_text)
+        suma = importe1_a_numero + importe2_a_numero + importe3_a_numero
+        mensaje = "El resultado de la suma es:{0}".format(suma)
+        alert("Resultado: ", mensaje)
+        
     def btn_promedio_on_click(self):
-        pass
+        importe1_a_text = self.txt_importe_1.get()
+        importe2_a_text = self.txt_importe_2.get()
+        importe3_a_text = self.txt_importe_3.get()
+        importe1_a_numero = int(importe1_a_text)
+        importe2_a_numero = int(importe2_a_text)
+        importe3_a_numero = int(importe3_a_text)
+        recuento = (importe1_a_numero + importe2_a_numero + importe3_a_numero)
+        promedio = int(recuento / 3)
+        mensaje = "El resultado de la suma es: {0}".format(promedio)
+        alert("Resultado: ", mensaje)
 
     def btn_total_iva_on_click(self):
-        pass      
+        importe1_a_text = self.txt_importe_1.get()
+        importe2_a_text = self.txt_importe_2.get()
+        importe3_a_text = self.txt_importe_3.get()
+        importe1_a_numero = int(importe1_a_text)
+        importe2_a_numero = int(importe2_a_text)
+        importe3_a_numero = int(importe3_a_text)    
+        importe1_con_iva =  importe1_a_numero * 1.21
     
 if __name__ == "__main__":
     app = App()
